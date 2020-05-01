@@ -26,8 +26,15 @@ export class App extends Component {
     return (
       <div>
        {list.map(function(myItem){
-        return<div> {myItem.title}</div>;
-        })}
+        return(
+        <div key={myItem.objectID}>
+          <span><a href={myItem.url}>{myItem.title} </a></span>
+          <span>{myItem.author} </span>
+          <span>{myItem.num_comments} </span>
+          <span>{myItem.points} </span>
+        </div>
+        );
+      })}
       </div>
     )
   }
