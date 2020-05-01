@@ -25,14 +25,9 @@ export class App extends Component {
   render() {
     return (
       <div>
-          {list.map(function(item) {
-          return <div>
-                  {item.title}
-                  <span>
-                  <a href={item.url}>{item.title}</a>
-                  </span>
-                </div>;
-          })}
+       {list.map(function(myItem){
+        return<div> {myItem.title}</div>;
+        })}
       </div>
     )
   }
