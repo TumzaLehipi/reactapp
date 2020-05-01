@@ -21,20 +21,34 @@ const list = [
   },
   ];
 
+  class Develop{
+
+    constructor(firstName, lastName){
+      this.firstName = firstName;
+      this.firstName = lastName;
+    }
+
+    getName(){
+      return this.firstName + '' +lastName;
+    }
+  }
+
+
 export class App extends Component {
+
   render() {
+    const robin = new Develop('Robin', 'Wieruch');
+    console.log(robin.getName());
     return (
       <div>
-       {list.map(function(myItem){
-        return(
+       {list.map((myItem)=>
         <div key={myItem.objectID}>
           <span><a href={myItem.url}>{myItem.title} </a></span>
           <span>{myItem.author} </span>
           <span>{myItem.num_comments} </span>
           <span>{myItem.points} </span>
         </div>
-        );
-      })}
+       )}
       </div>
     )
   }
