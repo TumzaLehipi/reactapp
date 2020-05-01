@@ -27,7 +27,7 @@ export class App extends Component {
       <div>
        {list.map(function(myItem){
         return(
-        <div>
+        <div key={myItem.objectID}>
           <span><a href={myItem.url}>{myItem.title} </a></span>
           <span>{myItem.author} </span>
           <span>{myItem.num_comments} </span>
