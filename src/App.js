@@ -29,7 +29,7 @@ const list = [
     }
 
     getName(){
-      return this.firstName + '' +lastName;
+      return this.firstName + '' +this.lastName;
     }
   }
 
