@@ -36,6 +36,24 @@ const list = [
 
 export class App extends Component {
 
+  
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         list,
+      };
+      this.onDismiss = this.onDismiss.bind(this);
+    }
+    
+    onDismiss(id){
+      function isNotId(myItem){
+        return myItem.objectID !==id;
+      }
+    const updatedList = this.state.list.filter(isNotId);
+    }
+
+
   render() {
     const robin = new Develop('Robin', 'Wieruch');
     console.log(robin.getName());
@@ -47,6 +65,13 @@ export class App extends Component {
           <span>{myItem.author} </span>
           <span>{myItem.num_comments} </span>
           <span>{myItem.points} </span>
+          <span>
+            <button 
+            onClick={() => this.onDismiss(myItem.objectID)}
+            type='button'>
+              dismiss
+            </button>
+          </span>
         </div>
        )}
       </div>
